@@ -1,0 +1,1 @@
+client ---> pay order ----> payment service(gRPC) -- grpc call--> bank service  ---> payment status

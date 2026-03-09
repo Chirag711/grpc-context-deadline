@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package payment;
+
+option go_package = "grpc-context-deadline/pkg/proto;proto";
+
+
+service PaymentService{
+    rpc PayOrder (PaymentRequest) returns (PaymentResponse);
+}
+
+
+message PaymentRequest{
+    string orderId = 1;
+    double amount = 2;
+    string method = 3;
+}
+
+message PaymentResponse{
+    string status = 1;
+}

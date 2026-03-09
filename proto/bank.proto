@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package bank;
+
+option go_package = "grpc-context-deadline/pkg/proto;proto";
+
+
+service BankService{
+    rpc ProcessPayment (BankRequest) returns (BankResponse);
+}
+
+
+message BankRequest{
+    string orderId = 1;
+    double amount = 2;
+}
+
+message BankResponse{
+    string status = 1;
+}
