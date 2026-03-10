@@ -1,1 +1,10 @@
 client ---> pay order ----> payment service(gRPC) -- grpc call--> bank service  ---> payment status
+
+
+----------------------------------------------
+
+on client-> payment init
+on payment-> request passed to bank for order_id
+on bank-> bank processsing payment for order: order_id
+on payment -> payment received via: GooglePay  Rs 500
+on client-> Payment Status :  Payment successful
